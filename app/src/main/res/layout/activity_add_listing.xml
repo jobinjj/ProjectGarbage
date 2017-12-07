@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.CardView
+            android:id="@+id/crd_tool"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/bg">
+
+                <ImageView
+                    android:id="@+id/btn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/ic_arrow_back_white" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Home Maker"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="60dp"
+                    style="@style/Base.TextAppearance.AppCompat.Title"
+                    android:textColor="#fff"/>
+                <Button
+                    android:id="@+id/logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/transparent"
+                    android:text="Logout"
+                    android:textColor="#fff"/>
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+        <TextView
+            android:layout_below="@+id/crd_tool"
+            android:id="@+id/welcome_homemaker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome\nHomeMaker"
+            android:layout_marginTop="18dp"
+            android:textColor="#006494"
+            style="@style/Base.TextAppearance.AppCompat.Display1"
+            android:layout_marginLeft="15dp"/>
+        <TextView
+            android:id="@+id/addlist"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/welcome_homemaker"
+            android:layout_below="@+id/welcome_homemaker"
+            style="@style/Base.TextAppearance.AppCompat.Title"
+            android:layout_marginTop="21dp"
+            android:text="Add Listing" />
+        <RelativeLayout
+            android:layout_width="95dp"
+            android:layout_height="1.5dp"
+            android:layout_alignStart="@+id/addlist"
+            android:layout_below="@+id/addlist"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorAccent"
+            android:id="@+id/relativeLayout">
+
+        </RelativeLayout>
+        <Spinner
+            android:id="@+id/priordrop_down"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_alignStart="@+id/textView10"
+            android:layout_below="@+id/textView10"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/priority"
+            />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_below="@+id/relativeLayout"
+            android:layout_alignStart="@+id/relativeLayout"
+            style="@style/Base.TextAppearance.AppCompat.Subhead"
+            android:text="Category"
+            />
+
+        <Spinner
+            android:id="@+id/categorydrop_down"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_alignStart="@+id/textView10"
+            android:layout_below="@+id/category"
+            android:layout_marginTop="14dp"
+            android:foregroundTint="@color/colorAccent"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/priority"
+            />
+
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/priordrop_down"
+            android:layout_below="@+id/priordrop_down"
+            android:layout_marginTop="25dp"
+            style="@style/Base.TextAppearance.AppCompat.Subhead"
+            android:text="Prioriy"
+            />
+        <EditText
+            android:padding="10dp"
+            android:id="@+id/edt_desc"
+            android:layout_width="match_parent"
+            android:layout_marginRight="15dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/desc"
+            android:layout_below="@+id/desc"
+            android:layout_marginTop="14dp" />
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Base.TextAppearance.AppCompat.Subhead"
+            android:layout_alignStart="@+id/categorydrop_down"
+            android:layout_below="@+id/categorydrop_down"
+            android:layout_marginTop="25dp"
+            android:text="Description"
+            android:textSize="15sp" />
+
+
+        <ImageView
+            android:id="@+id/img_add"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_alignStart="@+id/image"
+            android:layout_below="@+id/image"
+            android:layout_marginTop="18dp"
+            app:srcCompat="@drawable/addimage"
+            android:scaleType="fitXY"
+            android:layout_marginEnd="15dp"/>
+
+        <TextView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/edt_desc"
+            android:layout_below="@+id/edt_desc"
+            android:layout_marginTop="25dp"
+            android:text="Image"
+            style="@style/Base.TextAppearance.AppCompat.Subhead"/>
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/priordrop_down"
+            android:layout_below="@+id/img_add"
+            android:layout_marginTop="38dp"
+            android:background="@drawable/btnbg"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:text="submit"
+            android:textColor="#fff"
+            style="@style/Widget.AppCompat.Button"/>
+
+
+    </RelativeLayout>
+</ScrollView>

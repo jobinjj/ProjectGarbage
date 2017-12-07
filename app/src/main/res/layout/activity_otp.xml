@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="sample.com.jobin.msi.projectgarbage.Login.UserLogin"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background"
+        android:scaleType="fitXY"
+        android:tint="#281b1b1b"/>
+
+
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/recycle"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:src="@mipmap/ic_launcher" />
+        <TextView
+            android:layout_marginTop="18dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#C7FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GARBAGE \nCOLLECTION"
+            android:layout_toEndOf="@+id/recycle"
+            />
+    </RelativeLayout>
+<RelativeLayout
+    android:layout_centerVertical="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingStart="15dp"
+        android:hint="Enter OTP"
+        android:textColorHint="#fff"
+        android:layout_marginEnd="60dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginStart="60dp"
+        android:background="@drawable/input_bacground"
+        android:id="@+id/editText2" />
+
+    <Button
+        android:id="@+id/otp"
+        android:layout_width="match_parent"
+        android:layout_marginEnd="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/editText2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_bg"
+        android:text="Verify"
+        android:textColor="#fff"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+
+        android:text="Please enter the  OTP sent to your\n registered number"
+        android:textAlignment="center"
+        android:textColor="#d5ffffff"
+        android:textSize="21sp" />
+
+</RelativeLayout>
+</RelativeLayout>

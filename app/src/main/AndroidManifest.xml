@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="sample.com.jobin.msi.projectgarbage">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera2" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCdvaY4sP6xnkFluG1ikaTsClucTho28f4" />
+
+        <activity android:name=".Login.UserLogin" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".OTPActivity" />
+        <activity android:name=".Login.KarangLogin" />
+        <activity android:name=".UploadActivity" />
+        <activity android:name=".WelcomeScreen" />
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".Home.KarangHome" />
+        <activity android:name=".CustomTab" />
+        <activity android:name=".Home.UserHome" />
+        <activity
+            android:name=".AddListingActivity"
+            android:parentActivityName=".Home.UserHome" />
+        <activity android:name=".ImageTest" />
+
+        <provider
+            android:name=".GenericFileProvider"
+            android:authorities="${applicationId}.my.package.name.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity android:name=".EditProfile" />
+        <activity android:name=".MapsMarkerActivity"></activity>
+        <activity android:name=".KarangEditProfile"></activity>
+    </application>
+
+</manifest>

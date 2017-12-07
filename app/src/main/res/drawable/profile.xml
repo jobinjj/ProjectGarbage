@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item>
+       <bitmap android:src="@drawable/addimage">
+
+
+       </bitmap>
+
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            >
+
+            <solid android:color="#00ededed"
+                />
+
+            <stroke
+                android:width="3dp"
+                android:color="#ffffff" />
+            <corners
+                android:bottomLeftRadius="500dp"
+                android:bottomRightRadius="500dp"
+                android:topLeftRadius="500dp"
+                android:topRightRadius="500dp" />
+
+
+
+        </shape>
+    </item>
+
+</layer-list>
