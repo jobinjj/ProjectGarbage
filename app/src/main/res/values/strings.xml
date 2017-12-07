@@ -16,6 +16,14 @@
         <item>Metal</item>
         <item>Plastic</item>
     </string-array>
+    <string-array name="cities_array">
+        <item>Select city</item>
+        <item>Jurong east</item>
+        <item>Kampong</item>
+        <item>Tampines</item>
+        <item>Serangoon</item>
+        <item>Clementi</item>
+    </string-array>
     <string name="load_from_gallery">Load From Gallery</string>
     <string name="load_from_camera">Load From Camera</string>
     <string name="compress">Compress</string>

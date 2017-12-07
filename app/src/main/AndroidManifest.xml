@@ -35,11 +35,7 @@
         <activity android:name=".UploadActivity" />
         <activity android:name=".WelcomeScreen" />
         <activity android:name=".SplashScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".Home.KarangHome" />
@@ -62,7 +58,13 @@
 
         <activity android:name=".EditProfile" />
         <activity android:name=".MapsMarkerActivity"></activity>
-        <activity android:name=".KarangEditProfile"></activity>
+        <activity android:name=".KarangEditProfile">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
