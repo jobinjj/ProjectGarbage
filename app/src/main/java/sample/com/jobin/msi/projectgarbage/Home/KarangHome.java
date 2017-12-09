@@ -39,17 +39,7 @@ public class  KarangHome extends AppCompatActivity {
         pref = getApplicationContext().getSharedPreferences("Mypref",MODE_PRIVATE);
         editor = pref.edit();
         editor.apply();
-        logout = (Button) findViewById(R.id.logout);
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                editor.remove("isLoggedin").apply();
-                Toast.makeText(KarangHome.this, "succesfully logged out", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(KarangHome.this, UserLogin.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+
         IconTabLayout tabLayout = (IconTabLayout) findViewById(R.id.tabLayout);
         IconTabLayoutViewPager viewPager = (IconTabLayoutViewPager) findViewById(R.id.viewPager);
         DemoPagerAdapter adapter = new DemoPagerAdapter(getSupportFragmentManager());

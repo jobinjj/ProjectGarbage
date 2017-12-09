@@ -21,6 +21,25 @@
         <item>Jurong east</item>
         <item>Kampong</item>
     </string-array>
+    <string-array name="Jurong_east">
+        <item>Jurong Port</item>
+        <item>Penjuru</item>
+        <item>Crescent</item>
+        <item>Jurong River</item>
+        <item>Teban Gardens</item>
+        <item>Lakeside</item>
+        <item>International Business Park</item>
+        <item>Jurong Gateway</item>
+    </string-array>
+    <string-array name="Kampong">
+        <item>Simei</item>
+        <item>Jln Pelatok</item>
+        <item>9 Harvey Cres</item>
+        <item>7A Jln Angin Laut</item>
+        <item>Simei</item>
+        <item>Jln Pelatok</item>
+        <item>9 Harvey Cres</item>
+    </string-array>
     <string name="load_from_gallery">Load From Gallery</string>
     <string name="load_from_camera">Load From Camera</string>
     <string name="compress">Compress</string>

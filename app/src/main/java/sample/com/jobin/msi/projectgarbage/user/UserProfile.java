@@ -81,7 +81,6 @@ public class UserProfile extends Fragment implements OnMapReadyCallback {
         profile_pic = view.findViewById(R.id.profile_pic);
         body = view.findViewById(R.id.body);
 
-        textView8 = view.findViewById(R.id.textView8);
        address = view.findViewById(R.id.address);
         doorimg = view.findViewById(R.id.doorimg);
         btn_edit = view.findViewById(R.id.btn_edit);
