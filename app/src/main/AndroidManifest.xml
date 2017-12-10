@@ -61,8 +61,13 @@
         </provider>
 
         <activity android:name=".EditProfile" />
-        <activity android:name=".MapsMarkerActivity"></activity>
-        <activity android:name=".KarangEditProfile"></activity>
+        <activity android:name=".MapsMarkerActivity" />
+        <activity android:name=".KarangEditProfile" />
+        <activity android:name=".EwasteActivity" />
+        <activity android:name=".OrganicActivity" />
+        <activity android:name=".MetalActivity" />
+        <activity android:name=".PlasticActivity" />
+        <activity android:name=".EwasteDetailActivity"></activity>
     </application>
 
 </manifest>

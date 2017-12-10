@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import sample.com.jobin.msi.projectgarbage.Home.KarangHome;
 import sample.com.jobin.msi.projectgarbage.Home.UserHome;
+import sample.com.jobin.msi.projectgarbage.Login.UserLogin;
 
 public class SplashScreen extends AppCompatActivity {
     SharedPreferences pref;
@@ -18,7 +19,7 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_splash_screen);
-        pref = getApplicationContext().getSharedPreferences("Mypref",MODE_PRIVATE);
+        pref = getApplicationContext().getSharedPreferences("Mypref", MODE_PRIVATE);
         editor = pref.edit();
         editor.apply();
 
@@ -26,16 +27,25 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void run() {
 
-                if (String.valueOf(pref.getBoolean("isLoggedin",false)).equals("false")){
+                if (String.valueOf(pref.getBoolean("isLoggedin", false)).equals("false")) {
                     Intent intent = new Intent(SplashScreen.this, WelcomeScreen.class);
                     startActivity(intent);
                     finish();
-                }else {
+                } else {
                     Intent intent = new Intent(SplashScreen.this, UserHome.class);
-                    startActivity(intent);
-                    finish();
+                    Intent intent2 = new Intent(SplashScreen.this, KarangHome.class);
+                    String type = pref.getString("type", "collector");
+                    if (type.equals("user")) {
+                        startActivity(intent);
+                        finish();
+                    } else if (type.equals("collector")) {
+                        startActivity(intent2);
+                        finish();
+
+                    }
                 }
             }
         }, 2000);
+
     }
 }

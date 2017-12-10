@@ -323,7 +323,6 @@ public class EditProfile extends AppCompatActivity {
                     String longitude = String.valueOf(place.getLatLng().longitude);
                     str_latitude= latitude;
                     str_longitude= longitude;
-
             }
         }
     }
@@ -366,7 +365,7 @@ public class EditProfile extends AppCompatActivity {
                 protected Map<String, DataPart> getByteData() {
                     Map<String, DataPart> params = new HashMap<>();
                     long imagename = System.currentTimeMillis();
-                    params.put("picp", new DataPart(imagename + "img" + ".png", getFileDataFromDrawable(bitmap2)));
+                    params.put("picd", new DataPart(imagename + "img" + ".png", getFileDataFromDrawable(bitmap2)));
                     return params;
                 }
 
@@ -418,7 +417,7 @@ public class EditProfile extends AppCompatActivity {
                 protected Map<String, DataPart> getByteData() {
                     Map<String, DataPart> params = new HashMap<>();
                     long imagename = System.currentTimeMillis();
-                    params.put("picd", new DataPart(imagename + "img" + ".png", getFileDataFromDrawable(bitmap)));
+                    params.put("picp", new DataPart(imagename + "img" + ".png", getFileDataFromDrawable(bitmap)));
                     return params;
                 }
 
@@ -435,4 +434,6 @@ public class EditProfile extends AppCompatActivity {
         bitmap.compress(Bitmap.CompressFormat.PNG, 80, byteArrayOutputStream);
         return byteArrayOutputStream.toByteArray();
     }
+
+
 }

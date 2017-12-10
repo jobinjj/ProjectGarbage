@@ -109,6 +109,7 @@ public class UserLogin extends AppCompatActivity {
                                         Intent intent = new Intent(UserLogin.this,UserHome.class);
                                         Intent intent2 = new Intent(UserLogin.this,KarangHome.class);
                                         editor.putBoolean("isLoggedin",true);
+                                        editor.putString("type",str_type);
                                         editor.putString("email",str_email);
                                         editor.apply();
                                         if (str_type.equals("user")){
