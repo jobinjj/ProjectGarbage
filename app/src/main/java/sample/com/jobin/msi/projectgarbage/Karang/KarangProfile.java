@@ -1,5 +1,6 @@
 package sample.com.jobin.msi.projectgarbage.Karang;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,10 +9,12 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +41,9 @@ public class KarangProfile extends Fragment {
     private SharedPreferences.Editor editor;
     private String email;
     private NetworkImageView profile_pic,id_proof;
+    ProgressDialog pDialog;
+    private Button btn_edit;
+    private ScrollView scroll;
 
 
     @Nullable
@@ -49,6 +55,14 @@ public class KarangProfile extends Fragment {
         editor = pref.edit();
         editor.apply();
         email = pref.getString("email",null);
+        btn_edit = view.findViewById(R.id.btn_edit);
+        btn_edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),KarangEditProfile.class);
+                startActivity(intent);
+            }
+        });
         address = view.findViewById(R.id.addresskarang);
         name = view.findViewById(R.id.namekarang);
         mobile = view.findViewById(R.id.mobilekarang);
@@ -56,6 +70,7 @@ public class KarangProfile extends Fragment {
         id_proof = view.findViewById(R.id.id_proof);
         txt_prefered_location = view.findViewById(R.id.txt_prefered_location);
         txt_email = view.findViewById(R.id.txt_emailkarang);
+        scroll = view.findViewById(R.id.scroll);
         getData();
 
 //        gotoedit.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +89,10 @@ public class KarangProfile extends Fragment {
         if (netInfo == null) {
 
         }else{
-
+            pDialog = new ProgressDialog(new ContextThemeWrapper(getActivity(), R.style.AppTheme));
+            pDialog.setMessage("Loading please wait....");
+            pDialog.show();
+            pDialog.setCanceledOnTouchOutside(true);
 
             JsonArrayRequest movieReqpublic = new JsonArrayRequest(url + "email=" + "karang@gmail.com",
                     new Response.Listener<JSONArray>(){
@@ -82,7 +100,8 @@ public class KarangProfile extends Fragment {
                         public void onResponse(JSONArray response) {
 
 
-
+                            pDialog.dismiss();
+                            scroll.setVisibility(View.VISIBLE);
                             for (int i = 0; i < response.length(); i++) {
                                 try {
 

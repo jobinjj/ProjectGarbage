@@ -4,6 +4,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <ScrollView
+        android:visibility="gone"
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <RelativeLayout
@@ -152,13 +154,7 @@
                             android:layout_marginLeft="8dp"
                             android:maxHeight="52dp"
                             android:text="2nd Floor,Fortune Tower Padamugal,addresskarang 2nd Floor,Fortune Tower Padamugal,addresskarangcast_expanded_controller_ad_image_descriptioncast_expanded_controller_ad_image_descriptioncast_expanded_controller_ad_image_descriptioncast_expanded_controller_ad_image_description" />
-                        <TextView
-                            android:id="@+id/street"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/addresskarang"
-                            android:layout_alignStart="@+id/addresskarang"
-                            android:text="street"/>
+
                     </RelativeLayout>
                     <RelativeLayout
                         android:id="@+id/rl_phone"

@@ -9,22 +9,33 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import sample.com.jobin.msi.projectgarbage.EwasteActivity;
 import sample.com.jobin.msi.projectgarbage.Home.KarangHome;
 import sample.com.jobin.msi.projectgarbage.Login.UserLogin;
+import sample.com.jobin.msi.projectgarbage.MetalActivity;
+import sample.com.jobin.msi.projectgarbage.OrganicActivity;
+import sample.com.jobin.msi.projectgarbage.PlasticActivity;
 import sample.com.jobin.msi.projectgarbage.R;
 
 public class KarangPickup extends Fragment {
     private SharedPreferences pref;
     private SharedPreferences.Editor editor;
     private Button logout;
+    private ImageView ewaste,organic,plastic,metal;
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_karangpickup, container, false);
+        ewaste = (ImageView) view.findViewById(R.id.ewaste);
+        organic = (ImageView) view.findViewById(R.id.organic);
+        metal = (ImageView) view.findViewById(R.id.metal);
+        plastic = (ImageView) view.findViewById(R.id.plastic);
+        onClick(view);
         pref = getActivity().getSharedPreferences("Mypref",0);
         editor = pref.edit();
         editor.apply();
@@ -41,5 +52,36 @@ public class KarangPickup extends Fragment {
         });
 
         return view;
+    }
+
+    private void onClick(View view) {
+        ewaste.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), EwasteActivity.class);
+                startActivity(intent);
+            }
+        });
+        metal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), MetalActivity.class);
+                startActivity(intent);
+            }
+        });
+        plastic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), PlasticActivity.class);
+                startActivity(intent);
+            }
+        });
+        organic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), OrganicActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

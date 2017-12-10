@@ -51,7 +51,7 @@ public class UserProfile extends Fragment implements OnMapReadyCallback {
     RoundedCornerNetworkImageView profile_pic,doorimg;
     RelativeLayout body;
     double lat,lon;
-    TextView address,textView8,age,sex,name,street,mobile;
+    TextView address,age,sex,name,street,mobile;
     Button btn_edit;
     ImageView back;
     private String url = "http://searchdeal.online/webtemplate/garbagecollector/garbage_vsprofile.php?";
@@ -141,7 +141,7 @@ public class UserProfile extends Fragment implements OnMapReadyCallback {
                                     }
                                     else{
                                         body.setVisibility(View.VISIBLE);
-                                        textView8.setVisibility(View.GONE);
+
                                     }
 
                                 } catch (JSONException e) {
