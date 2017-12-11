@@ -2,7 +2,6 @@ package sample.com.jobin.msi.projectgarbage;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SearchRecentSuggestionsProvider;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -32,8 +31,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import sample.com.jobin.msi.projectgarbage.user.UserAddListing;
-
 public class EwasteActivity extends AppCompatActivity {
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
     public static NetworkInfo networkInfo;
@@ -45,6 +42,7 @@ public class EwasteActivity extends AppCompatActivity {
     String email;
     private SharedPreferences.Editor editor;
     private RecyclerView recycler;
+    MoviesAdapter adapter2;
     private ImageView back2;
 
     @Override
@@ -56,7 +54,7 @@ public class EwasteActivity extends AppCompatActivity {
         recycler.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
         recycler.setLayoutManager(mLayoutManager);
-        MoviesAdapter adapter2 = new MoviesAdapter(List);
+         adapter2 = new MoviesAdapter(List);
         recycler.setAdapter(adapter2);
     }
 
@@ -77,15 +75,21 @@ public class EwasteActivity extends AppCompatActivity {
                                 try {
                                     JSONObject obj = response.getJSONObject(i);
                                     Data data = new Data();
-                                    data.setPriority(obj.getString("priority"));
+                                    data.setpriority(obj.getString("priority"));
                                     data.sete_title(obj.getString("description"));
-//                                    data.setE_street(obj.getString("street"));
+                                    data.setE_street(obj.getString("street"));
+                                    data.setCity(obj.getString("city"));
+                                    data.setDate(obj.getString("date"));
+                                    data.setName(obj.getString("name"));
+                                    data.setAddress(obj.getString("address"));
                                     data.setImg_url(obj.getString("image"));
+                                    data.setPostid(obj.getString("postid"));
                                     List.add(data);
 
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
+                                adapter2.notifyDataSetChanged();
                             }
                         }
                     }, new Response.ErrorListener() {
@@ -146,7 +150,7 @@ public class EwasteActivity extends AppCompatActivity {
             holder.more.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(EwasteActivity.this,EwasteDetailActivity.class);
+                    Intent intent = new Intent(EwasteActivity.this,DetailActivity.class);
                     intent.putExtra("img_url",movie.getImg_url());
                     intent.putExtra("etitle",movie.gete_title());
                     intent.putExtra("priority",movie.getPriority());
@@ -155,8 +159,8 @@ public class EwasteActivity extends AppCompatActivity {
                     intent.putExtra("address",movie.getAddress());
                     intent.putExtra("street",movie.getE_street());
                     intent.putExtra("date",movie.getDate());
+                    intent.putExtra("post",movie.getPostid());
                     startActivity(intent);
-
                 }
             });
         }

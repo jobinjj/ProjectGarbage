@@ -1,9 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="sample.com.jobin.msi.projectgarbage.OrganicActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="sample.com.jobin.msi.projectgarbage.EwasteActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.v7.widget.CardView
+        android:id="@+id/crd_tool"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Organic waste"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:layout_toEndOf="@+id/back2"
+                style="@style/Base.TextAppearance.AppCompat.Title"
+                android:textColor="#fff"/>
+            <ImageView
+                android:id="@+id/back2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/ic_arrow_back_white" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/crd_tool">
+        <android.support.v7.widget.RecyclerView
+            android:layout_below="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recycler">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recycler"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="17dp" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

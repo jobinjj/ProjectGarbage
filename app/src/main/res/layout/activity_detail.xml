@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="sample.com.jobin.msi.projectgarbage.DetailActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/crd_tool"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/r1"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:background="#3f000000">
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/imgurl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"/>
+
+                <ImageView
+                    android:id="@+id/back2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="18dp"
+                    android:src="@drawable/ic_arrow_back_white" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_below="@+id/r1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeLayout6">
+
+                <TextView
+                    android:id="@+id/title"
+                    style="@style/Base.TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="27dp"
+                    android:layout_marginTop="19dp"
+                    android:text="Karang Greenie" />
+
+                <TextView
+                    style="@style/Base.TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignTop="@+id/title"
+                    android:layout_marginEnd="28dp"
+                    android:text="HIGH"
+                    android:textColor="#e10101"
+                    android:id="@+id/priority" />
+
+                <TextView
+                    style="@style/Base.TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/title"
+                    android:layout_below="@+id/title"
+                    android:layout_marginTop="14dp"
+                    android:text="Posted by"
+                    android:textSize="12sp"
+                    android:id="@+id/textView7" />
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/Base.TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView7"
+                    android:layout_alignBottom="@+id/textView7"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/textView7"
+                    android:text="Jobin Jeeji"
+                    android:textStyle="bold"
+                    android:textSize="12sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/textView7"
+                    android:layout_marginTop="26dp"
+                    android:background="#11000000"
+                    android:id="@+id/relativeLayout3" />
+
+                <TextView
+                    android:id="@+id/date"
+                    style="@style/Base.TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/name"
+                    android:layout_alignBottom="@+id/name"
+                    android:textStyle="bold"
+                    android:layout_alignEnd="@+id/priority"
+                    android:text="12-12-2017" />
+
+                <TextView
+                    style="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/textView7"
+                    android:layout_below="@+id/relativeLayout3"
+
+                    android:layout_marginTop="33dp"
+                    android:text="Address"
+                    android:id="@+id/textView9" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/textView9"
+                    android:layout_below="@+id/textView9"
+                    android:layout_marginTop="18dp"
+                    android:src="@drawable/ic_notebook"
+                    android:id="@+id/imageView4" />
+
+                <TextView
+                    android:id="@+id/address"
+                    style="@style/Base.TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/imageView4"
+                    android:layout_toEndOf="@+id/imageView4"
+                    android:text="75 Airport Boulevard, #01-01,
+Singapore 819664"
+                    android:layout_marginLeft="10dp"
+                    android:lineSpacingExtra="10dp"/>
+
+                <TextView
+                    android:id="@+id/city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/address"
+                    android:layout_below="@+id/address"
+                    android:layout_marginTop="11dp"
+                    android:text="Cherthala ,"
+                    style="@style/Base.TextAppearance.AppCompat.Body1"/>
+
+                <TextView
+                    style="@style/Base.TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/city"
+                    android:layout_alignBottom="@+id/city"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/city"
+                    android:text="Thuravoor"
+                    android:id="@+id/street" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/date"
+                    android:layout_marginTop="40dp"
+                    android:layout_below="@+id/street"
+                    android:layout_alignStart="@+id/textView9"
+                    android:layout_marginBottom="20dp">
+
+                    <Button
+                        android:id="@+id/bid"
+                        android:layout_width="110dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/bid_button" />
+                    <EditText
+                        android:id="@+id/ed_bid"
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:background="@drawable/ic_bid_rec"
+                        android:layout_toStartOf="@+id/bid"/>
+                </RelativeLayout>
+
+
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

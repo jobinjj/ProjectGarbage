@@ -136,6 +136,7 @@ public class UserAddListing extends Fragment {
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
+                                adapter2.notifyDataSetChanged();
                             }
                         }
                     }, new Response.ErrorListener() {

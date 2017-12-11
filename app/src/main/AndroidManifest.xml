@@ -67,7 +67,7 @@
         <activity android:name=".OrganicActivity" />
         <activity android:name=".MetalActivity" />
         <activity android:name=".PlasticActivity" />
-        <activity android:name=".EwasteDetailActivity"></activity>
+        <activity android:name=".DetailActivity"></activity>
     </application>
 
 </manifest>
