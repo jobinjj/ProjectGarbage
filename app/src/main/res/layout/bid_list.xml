@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+<RelativeLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="85dp"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rl_parent">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="18dp"
+            android:src="@drawable/people2"
+            android:id="@+id/col_image" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/col_image"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@+id/col_image"
+            android:text="Abhijith"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="11sp"
+            android:id="@+id/col_name"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/col_image"
+            android:layout_toEndOf="@+id/col_image"
+            android:text="Would like to bid for "
+            android:textSize="11sp"
+            android:layout_marginStart="12dp"
+            android:id="@+id/textView12"
+            android:textColor="#8d000000"/>
+
+        <TextView
+            android:id="@+id/bid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/textView12"
+            android:layout_toEndOf="@+id/textView12"
+            android:text="30"
+            android:layout_marginStart="3dp"
+            android:textColor="#000"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="14dp"
+            android:layout_alignTop="@+id/textView12"
+            android:layout_toEndOf="@+id/bid"
+            android:text="$"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="1dp"
+            android:textSize="11sp"
+            android:textColor="#27AE60" />
+
+        <Button
+            android:layout_width="73dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="13dp"
+            android:background="@drawable/ic_btn_accept" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+         android:layout_alignParentBottom="true"
+            android:background="#2f000000">
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+</RelativeLayout>

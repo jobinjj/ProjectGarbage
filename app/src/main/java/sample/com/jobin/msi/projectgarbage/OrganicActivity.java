@@ -63,7 +63,6 @@ public class OrganicActivity extends AppCompatActivity {
             Toast.makeText(this, "no network connection", Toast.LENGTH_SHORT).show();
         }
         else {
-            Toast.makeText(this, email, Toast.LENGTH_SHORT).show();
             JsonArrayRequest request = new JsonArrayRequest(url + "email=" + email + "&category=" + "organic-waste",
                     new Response.Listener<JSONArray>() {
                         @Override

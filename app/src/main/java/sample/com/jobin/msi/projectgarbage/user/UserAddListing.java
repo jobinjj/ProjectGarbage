@@ -41,6 +41,7 @@ import sample.com.jobin.msi.projectgarbage.AppController;
 import sample.com.jobin.msi.projectgarbage.Home.UserHome;
 import sample.com.jobin.msi.projectgarbage.Login.UserLogin;
 import sample.com.jobin.msi.projectgarbage.R;
+import sample.com.jobin.msi.projectgarbage.UserDetailActivity;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -131,6 +132,9 @@ public class UserAddListing extends Fragment {
                                     data.setDate(obj.getString("date"));
                                     data.setDescription(obj.getString("description"));
                                     data.setImg_url(obj.getString("image"));
+                                    data.setPriority(obj.getString("priority"));
+                                    data.setPostid(obj.getString("postid"));
+                                    System.out.println(obj.getString("postid"));
                                     MovieList.add(data);
 
                                 } catch (JSONException e) {
@@ -174,6 +178,30 @@ public class UserAddListing extends Fragment {
             holder.desc.setText(movie.getDescription());
             holder.date.setText(movie.getDate());
             holder.thumbnail.setImageUrl(movie.getImg_url(), imageLoader);
+            holder.thumbnail.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getActivity(), UserDetailActivity.class);
+                    intent.putExtra("date",movie.getDate());
+                    intent.putExtra("description",movie.getDescription());
+                    intent.putExtra("image",movie.getImg_url());
+                    intent.putExtra("priority",movie.getPriority());
+                    intent.putExtra("postid",movie.getPostid());
+                    startActivity(intent);
+                }
+            });
+            holder.more.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getActivity(), UserDetailActivity.class);
+                    intent.putExtra("date",movie.getDate());
+                    intent.putExtra("description",movie.getDescription());
+                    intent.putExtra("image",movie.getImg_url());
+                    intent.putExtra("priority",movie.getPriority());
+                    intent.putExtra("postid",movie.getPostid());
+                    startActivity(intent);
+                }
+            });
         }
 
         @Override
@@ -184,6 +212,7 @@ public class UserAddListing extends Fragment {
         public class MyViewHolder extends RecyclerView.ViewHolder {
             private TextView desc,date;
             private NetworkImageView thumbnail;
+            private  Button more;
 
 
             public MyViewHolder(View view) {
@@ -191,6 +220,8 @@ public class UserAddListing extends Fragment {
                 desc = (TextView) view.findViewById(R.id.description);
                 thumbnail = (NetworkImageView) view.findViewById(R.id.thumbnail1);
                 date = (TextView) view.findViewById(R.id.date);
+                more = (Button) view.findViewById(R.id.more);
+
             }
         }
     }
@@ -200,14 +231,32 @@ public class UserAddListing extends Fragment {
      */
     
     public static class Data {
-        public  String img_url,description,date;
+        public  String img_url,description,date,priority,postid;
         public Data(){
 
         }
-        public Data(String img_url,String description,String date){
+        public Data(String img_url,String description,String date,String priority, String postid){
+            this.postid = postid;
             this.date = date;
             this.description = description;
             this.img_url = img_url;
+            this.priority = priority;
+        }
+
+        public String getPriority() {
+            return priority;
+        }
+
+        public void setPriority(String priority) {
+            this.priority = priority;
+        }
+
+        public String getPostid() {
+            return postid;
+        }
+
+        public void setPostid(String postid) {
+            this.postid = postid;
         }
 
         public String getImg_url() {
